@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stylette Beauty Salon & Makeup Studio</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for icons (e.g., social media, service icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<style>
+
+    /* General Styling */
+:root {
+    --primary-color: #6a0572; /* Darker purple from logo */
+    --accent-color: #e63988; /* Pink/magenta from logo */
+    --light-bg: #f8f8f8;
+    --dark-text: #333;
+    --light-text: #fff;
+    --border-color: #ddd;
+    --shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--dark-text);
+    background-color: var(--light-bg);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Remove extra space below images */
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+ul {
+    list-style: none;
+}
+
+section {
+    padding: 80px 0;
+}
+
+h1, h2, h3 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--accent-color);
+    margin: 15px auto 0;
+    border-radius: 5px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: var(--light-text);
+    padding: 12px 25px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background-color: #d12e7a; /* Slightly darker accent */
+}
+
+.primary-btn {
+    background-color: var(--primary-color);
+}
+
+.primary-btn:hover {
+    background-color: #5a0461; /* Slightly darker primary */
+}
+
+/* Header Styling */
+header {
+    background-color: var(--light-text);
+    box-shadow: var(--shadow);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo img {
+    height: 60px; /* Adjust logo height as needed */
+}
+
+nav .nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+nav .nav-links li a {
+    color: var(--dark-text);
+    font-weight: 500;
+    transition: color 0.3s ease;
+    padding: 5px 0;
+    position: relative;
+}
+
+nav .nav-links li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-color);
+    transition: width 0.3s ease;
+}
+
+nav .nav-links li a:hover {
+    color: var(--primary-color);
+}
+
+nav .nav-links li a:hover::after {
+    width: 100%;
+}
+
+.burger {
+    display: none; /* Hidden on desktop */
+    cursor: pointer;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: var(--primary-color);
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('hero_bg.jpg') no-repeat center center/cover;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--light-text);
+    position: relative;
+    overflow: hidden;
+}
+
+/* You will need to create a 'hero_bg.jpg' image or replace with your chosen background */
+
+.hero-content {
+    z-index: 1;
+}
+
+.hero-content h1 {
+    font-size: 3.8em;
+    margin-bottom: 15px;
+    color: var(--light-text);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+}
+
+.hero-content p {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+    color: var(--light-text);
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+}
+
+/* About Us Section */
+.about-section {
+    background-color: var(--light-text);
+    text-align: center;
+}
+
+.about-section .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.about-content {
+    flex: 1;
+    text-align: left;
+}
+
+.about-content p {
+    margin-bottom: 15px;
+    color: #555;
+    font-size: 1.1em;
+}
+
+.about-image {
+    flex: 1;
+    max-width: 500px; /* Limit image size */
+    box-shadow: var(--shadow);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Services Section */
+.services-section {
+    background-color: var(--light-bg);
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    text-align: center;
+}
+
+.service-item {
+    background-color: var(--light-text);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+}
+
+.service-item .icon {
+    font-size: 3em;
+    color: var(--accent-color);
+    margin-bottom: 20px;
+}
+
+.service-item h3 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+.service-item p {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.service-link {
+    color: var(--primary-color);
+    font-weight: bold;
+    position: relative;
+    padding-bottom: 2px;
+}
+
+.service-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary-color);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.service-link:hover::after {
+    transform: scaleX(1);
+}
+
+
+/* Gallery Section */
+.gallery-section {
+    background-color: var(--light-text);
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 250px; /* Fixed height for consistent grid */
+    object-fit: cover; /* Ensures images cover the area without distortion */
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: zoom-in;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Booking Section */
+.booking-section {
+    background-color: var(--light-bg);
+    text-align: center;
+}
+
+.booking-section .subtitle {
+    font-size: 1.2em;
+    color: #555;
+    margin-bottom: 40px;
+}
+
+.booking-form-placeholder {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: var(--light-text);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+.booking-form .form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.booking-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.booking-form input[type="text"],
+.booking-form input[type="email"],
+.booking-form input[type="date"],
+.booking-form input[type="time"],
+.booking-form select,
+.booking-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 1em;
+    color: var(--dark-text);
+    background-color: #fefefe;
+}
+
+.booking-form input:focus,
+.booking-form select:focus,
+.booking-form textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 2px rgba(var(--accent-color), 0.2);
+}
+
+.booking-form textarea {
+    resize: vertical;
+}
+
+.booking-form .btn {
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* Contact Section */
+.contact-section {
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    text-align: center;
+}
+
+.contact-section h2 {
+    color: var(--light-text);
+}
+
+.contact-section h2::after {
+    background-color: var(--accent-color);
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    text-align: left;
+    align-items: flex-start; /* Align top */
+}
+
+.contact-info p {
+    margin-bottom: 15px;
+    font-size: 1.1em;
+    display: flex;
+    align-items: center;
+}
+
+.contact-info p i {
+    font-size: 1.3em;
+    margin-right: 15px;
+    color: var(--accent-color);
+}
+
+.social-links {
+    margin-top: 30px;
+    display: flex;
+    gap: 20px;
+}
+
+.social-links a {
+    color: var(--light-text);
+    font-size: 1.8em;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--accent-color);
+}
+
+.contact-map iframe {
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+
+/* Footer Section */
+footer {
+    background-color: #222;
+    color: #bbb;
+    text-align: center;
+    padding: 25px 0;
+    font-size: 0.9em;
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .about-section .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .about-content, .about-image {
+        max-width: 100%;
+    }
+    .about-image {
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 3em;
+    }
+    .hero-content p {
+        font-size: 1.2em;
+    }
+
+    nav .nav-links {
+        position: fixed;
+        right: 0;
+        top: 0;
+        height: 100vh;
+        width: 60%;
+        background-color: var(--primary-color);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+        z-index: 999;
+    }
+
+    nav .nav-links li {
+        opacity: 0; /* Hide by default, show with JS */
+    }
+
+    nav .nav-links li a {
+        color: var(--light-text);
+        font-size: 1.5em;
+        padding: 15px 0;
+    }
+
+    nav .nav-links li a::after {
+        background-color: var(--accent-color);
+    }
+
+    .burger {
+        display: block;
+        z-index: 1001;
+    }
+
+    .nav-active {
+        transform: translateX(0%);
+    }
+
+    /* Burger animation */
+    .toggle .line1 {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    .toggle .line2 {
+        opacity: 0;
+    }
+    .toggle .line3 {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .contact-info {
+        order: 2; /* Put info below map on mobile */
+    }
+    .contact-map {
+        order: 1; /* Put map first on mobile */
+    }
+    .contact-info p {
+        justify-content: center;
+    }
+    .social-links {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2.5em;
+    }
+    h2 {
+        font-size: 2em;
+    }
+    section {
+        padding: 60px 0;
+    }
+    .hero-content p {
+        font-size: 1em;
+    }
+}
+</style></head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="logo.png" style="height: 80px;" alt="Stylette Beauty Salon Logo">
+                <!-- Replace 'stylette_logo.png' with the actual path to your logo image -->
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#booking">Book Appointment</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+                <div class="burger" onclick="toggleMenu()">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="hero-content">
+            <h1>Experience Beauty, Redefined.</h1>
+            <p>Where Elegance Meets Expertise in Skin, Hair & Nails.</p>
+            <a href="#booking" class="btn primary-btn">Book Your Transformation</a>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <h2>Our Story: The Art of Beauty at Stylette</h2>
+                <p>Welcome to Stylette, your sanctuary of beauty and rejuvenation. We are dedicated to providing an unparalleled salon experience, combining luxurious treatments with expert artistry. Our passion lies in enhancing your natural beauty and helping you feel confident and radiant.</p>
+                <p>Founded on the principles of excellence and personalized care, Stylette brings together a team of highly skilled professionals committed to using premium products and the latest techniques. From revitalizing skin treatments to transformative hair makeovers and exquisite nail art, every service is tailored to meet your unique needs and desires. Discover the Stylette difference – where every visit is an indulgence.</p>
+            </div>
+            <div class="about-image">
+                <img src="salon_interior.jpg" alt="Stylette Salon Interior">
+                <!-- Placeholder for a salon interior image -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+        <div class="container">
+            <h2>Indulge in Our Exquisite Services</h2>
+            <div class="service-grid">
+                <div class="service-item">
+                    <i class="fas fa-spa icon"></i>
+                    <h3>Skin Care</h3>
+                    <p>Revitalizing facials, cleansing, and advanced treatments for glowing, healthy skin.</p>
+                    <a href="#" class="service-link">Learn More</a>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-cut icon"></i>
+                    <h3>Hair Care</h3>
+                    <p>Expert cuts, vibrant colors, stylish blowouts, and nourishing hair treatments.</p>
+                    <a href="#" class="service-link">Learn More</a>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-hand-sparkles icon"></i>
+                    <h3>Nail Care</h3>
+                    <p>Manicures, pedicures, gel nails, and creative nail art for perfect hands and feet.</p>
+                    <a href="#" class="service-link">Learn More</a>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-palette icon"></i>
+                    <h3>Makeup Studio</h3>
+                    <p>Professional makeup for weddings, events, and personalized makeup lessons.</p>
+                    <a href="#" class="service-link">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery-section">
+        <div class="container">
+            <h2>Our Portfolio: See the Stylette Difference</h2>
+            <div class="gallery-grid">
+                <img src="gallery1.jpg" alt="Hair styling example">
+                <img src="gallery2.jpg" alt="Makeup example">
+                <img src="gallery3.jpg" alt="Nail art example">
+                <img src="gallery4.jpg" alt="Facial treatment example">
+                <img src="gallery5.jpg" alt="Bridal makeup">
+                <img src="gallery6.jpg" alt="Modern haircut">
+                <!-- Replace with your actual gallery images -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Book an Appointment Section -->
+    <section id="booking" class="booking-section">
+        <div class="container">
+            <h2>Schedule Your Beauty Experience</h2>
+            <p class="subtitle">Use our online booking system to find your perfect slot.</p>
+            <div class="booking-form-placeholder">
+                <!-- In a real site, this would be an embedded booking widget or a more complex form -->
+                <form action="#" method="POST" class="booking-form">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Your Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="service">Select Service</label>
+                        <select id="service" name="service" required>
+                            <option value="">-- Choose a Service --</option>
+                            <option value="facial">Hydrating Facial</option>
+                            <option value="haircut">Women's Haircut</option>
+                            <option value="manicure">Gel Manicure</option>
+                            <option value="bridal_makeup">Bridal Makeup</option>
+                            <option value="spa_pedicure">Spa Pedicure</option>
+                            <option value="highlights">Hair Highlights</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Preferred Date</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="time">Preferred Time</label>
+                        <input type="time" id="time" name="time" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Any Special Requests?</label>
+                        <textarea id="message" name="message" rows="4"></textarea>
+                    </div>
+                    <button type="submit" class="btn primary-btn">Confirm Appointment</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Us Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2>Connect With Us</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Beauty Lane, Glamour City, BC 12345</p>
+                    <p><i class="fas fa-phone"></i> (123) 456-7890</p>
+                    <p><i class="fas fa-envelope"></i> info@stylette.com</p>
+                    <p><i class="fas fa-clock"></i> Mon - Sat: 9:00 AM - 7:00 PM | Sunday: Closed</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                    </div>
+                </div>
+                <div class="contact-map">
+                    <!-- Embedded Google Map -->
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10000.000000000002!2d-122.4194155!3d37.7749295!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzfCsDQ2JzI5LjciTiAxMjLCsDI2JzI5LjUiVw!5e0!3m2!1sen!2sus!4v1678901234567!5m2!1sen!2sus" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    <!-- Replace the src with your actual salon location map embed code -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Stylette Beauty Salon & Makeup Studio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+    <script>
+        // Smooth scrolling for navigation links
+document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+
+        // Close mobile menu if open
+        if (document.body.classList.contains('menu-active')) {
+            toggleMenu();
+        }
+    });
+});
+
+// Mobile navigation toggle
+function toggleMenu() {
+    const navLinks = document.querySelector('.nav-links');
+    const burger = document.querySelector('.burger');
+    document.body.classList.toggle('menu-active'); // Add/remove a class to body for overlay
+    navLinks.classList.toggle('nav-active');
+    burger.classList.toggle('toggle'); // For animating the burger icon
+
+    // Animate individual links
+    navLinks.querySelectorAll('li').forEach((link, index) => {
+        if (link.style.animation) {
+            link.style.animation = '';
+        } else {
+            link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+        }
+    });
+}
+
+
+// Simple form submission (for demonstration, won't send data without a backend)
+const bookingForm = document.querySelector('.booking-form');
+if (bookingForm) {
+    bookingForm.addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent default form submission
+
+        // You would typically send this data to a server here
+        alert('Appointment request submitted! We will contact you shortly to confirm.');
+
+        // Optionally clear the form
+        bookingForm.reset();
+    });
+}
+    </script>
+</body>
+</html>

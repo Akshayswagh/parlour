@@ -10,101 +10,115 @@
     />
 
     <style>
-  /* Instagram Section Styles */
-  .instagram {
-    background-color: #fafafa;
-    padding: 80px 0;
-  }
-  
-  .instagram-subtitle {
-    text-align: center;
-    font-size: 1.2rem;
-    color: var(--accent);
-    margin-bottom: 40px;
-    font-weight: 500;
-  }
-  
-  .instagram-feed {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 15px;
-    margin-bottom: 40px;
-  }
-  
-  .instagram-post {
-    position: relative;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    aspect-ratio: 1/1;
-  }
-  
-  .instagram-post img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-  }
-  
-  .instagram-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.4);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-  
-  .instagram-actions {
-    color: white;
-    text-align: center;
-  }
-  
-  .instagram-actions span {
-    margin: 0 10px;
-    font-weight: 600;
-  }
-  
-  .instagram-post:hover .instagram-overlay {
-    opacity: 1;
-  }
-  
-  .instagram-post:hover img {
-    transform: scale(1.05);
-  }
-  
-  .instagram-cta {
-    text-align: center;
-    margin-top: 30px;
-  }
-  
-  .instagram-cta p {
-    margin-bottom: 20px;
-    font-size: 1.1rem;
-  }
-  
-  .instagram-cta .btn {
-    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
-    border: none;
-  }
-  
-  .instagram-cta .btn:hover {
-    background: linear-gradient(45deg, #bc1888, #cc2366, #dc2743, #e6683c, #f09433);
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(188, 24, 136, 0.3);
-  }
-  
-  @media (max-width: 768px) {
-    .instagram-feed {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-</style>
+      /* Instagram Section Styles */
+      .instagram {
+        background-color: #fafafa;
+        padding: 80px 0;
+      }
+
+      .instagram-subtitle {
+        text-align: center;
+        font-size: 1.2rem;
+        color: var(--accent);
+        margin-bottom: 40px;
+        font-weight: 500;
+      }
+
+      .instagram-feed {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 15px;
+        margin-bottom: 40px;
+      }
+
+      .instagram-post {
+        position: relative;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        aspect-ratio: 1/1;
+      }
+
+      .instagram-post img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+      }
+
+      .instagram-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.4);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .instagram-actions {
+        color: white;
+        text-align: center;
+      }
+
+      .instagram-actions span {
+        margin: 0 10px;
+        font-weight: 600;
+      }
+
+      .instagram-post:hover .instagram-overlay {
+        opacity: 1;
+      }
+
+      .instagram-post:hover img {
+        transform: scale(1.05);
+      }
+
+      .instagram-cta {
+        text-align: center;
+        margin-top: 30px;
+      }
+
+      .instagram-cta p {
+        margin-bottom: 20px;
+        font-size: 1.1rem;
+      }
+
+      .instagram-cta .btn {
+        background: linear-gradient(
+          45deg,
+          #f09433,
+          #e6683c,
+          #dc2743,
+          #cc2366,
+          #bc1888
+        );
+        border: none;
+      }
+
+      .instagram-cta .btn:hover {
+        background: linear-gradient(
+          45deg,
+          #bc1888,
+          #cc2366,
+          #dc2743,
+          #e6683c,
+          #f09433
+        );
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(188, 24, 136, 0.3);
+      }
+
+      @media (max-width: 768px) {
+        .instagram-feed {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+    </style>
     <style>
       /* Global Styles */
       :root {
@@ -175,21 +189,18 @@
         cursor: pointer;
       }
 
-
-      .card-btn:hover{
-     
+      .card-btn:hover {
         background-color: purple;
         color: var(--light);
-                padding: 10px 26px;
+        padding: 10px 26px;
 
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    
       }
 
       .btn:hover {
         background-color: purple;
         color: var(--light);
-                padding: 14px 34px;
+        padding: 14px 34px;
 
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
       }
@@ -585,6 +596,184 @@
         }
       }
     </style>
+    <style>
+      /* Testimonials Section */
+      .testimonials {
+        background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+          url("https://images.unsplash.com/photo-1560066984-138dadb4c035?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80");
+        background-size: cover;
+        background-position: center;
+        color: white;
+        padding: 100px 0;
+        text-align: center;
+        border-radius: 15px;
+        overflow: hidden;
+      }
+
+      .testimonials-container {
+        position: relative;
+        max-width: 900px;
+        margin: 0 auto;
+        overflow: hidden;
+      }
+
+      .testimonials-slide {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+      }
+
+      .testimonial-card {
+        flex: 0 0 100%;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 40px;
+        border-radius: 10px;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      }
+
+      .testimonial-text {
+        font-style: italic;
+        margin-bottom: 30px;
+        line-height: 1.8;
+        font-size: 1.1rem;
+        position: relative;
+        padding: 0 30px;
+      }
+
+      .testimonial-text:before,
+      .testimonial-text:after {
+        content: "";
+        font-size: 60px;
+        color: #d4af37;
+        position: absolute;
+        line-height: 1;
+      }
+
+      .testimonial-text:before {
+        top: -20px;
+        left: 0;
+      }
+
+      .testimonial-text:after {
+        content: "";
+        bottom: -40px;
+        right: 0;
+      }
+
+      .testimonial-author {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .author-avatar {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-bottom: 15px;
+        border: 3px solid #d4af37;
+      }
+
+      .author-avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .author-details h4 {
+        margin-bottom: 5px;
+        font-size: 1.2rem;
+      }
+
+      .author-details p {
+        color: #d4af37;
+        font-size: 0.9rem;
+      }
+
+      .testimonial-controls {
+        display: flex;
+        justify-content: center;
+        margin-top: 40px;
+        gap: 10px;
+      }
+
+      .testimonial-dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.3);
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .testimonial-dot.active {
+        background: #d4af37;
+        transform: scale(1.2);
+      }
+
+      .testimonial-nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(255, 255, 255, 0.2);
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        z-index: 10;
+      }
+
+      .testimonial-nav:hover {
+        background: #d4af37;
+      }
+
+      .testimonial-nav.prev {
+        left: -70px;
+      }
+
+      .testimonial-nav.next {
+        right: -70px;
+      }
+
+      /* Rating Stars */
+      .rating {
+        color: #d4af37;
+        margin: 15px 0;
+        font-size: 1.2rem;
+      }
+
+      /* Responsive Styles */
+      @media (max-width: 992px) {
+        .testimonial-nav.prev {
+          left: -30px;
+        }
+
+        .testimonial-nav.next {
+          right: -30px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .testimonial-nav {
+          display: none;
+        }
+
+        .testimonial-text {
+          padding: 0 15px;
+          font-size: 1rem;
+        }
+
+        .testimonial-card {
+          padding: 30px 20px;
+        }
+      }
+    </style>
   </head>
   <body>
     <!-- Header -->
@@ -627,10 +816,11 @@
       <div class="container">
         <h2 class="section-title">About Us</h2>
         <div class="about-content">
-
-
           <div class="about-image">
-            <img src="https://m.media-amazon.com/images/I/71POqHTHB7L.jpg" alt="about img">
+            <img
+              src="https://m.media-amazon.com/images/I/71POqHTHB7L.jpg"
+              alt="about img"
+            />
           </div>
           <div class="about-text">
             <p>
@@ -656,7 +846,6 @@
               making you look and feel your absolute best.
             </p>
           </div>
-          
         </div>
       </div>
     </section>
@@ -845,8 +1034,7 @@
             </div>
           </div>
 
-
-            <div class="service-card">
+          <div class="service-card">
             <div class="service-image">
               <img
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWFRfz5DVg-2-7PcXH_eJezw0_C53q1o2mDA&s"
@@ -866,83 +1054,277 @@
       </div>
     </section>
 
- <!-- Instagram Section -->
-<section id="instagram" class="instagram">
-  <div class="container">
-    <h2 class="section-title">Follow Us on Instagram</h2>
-    <p class="instagram-subtitle">@stylettebeautysalon_</p>
-    
-    <div class="instagram-feed">
-      <div class="instagram-post">
-        <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=580&q=80" alt="Instagram Post">
-        <div class="instagram-overlay">
-          <div class="instagram-actions">
-            <span><i class="fas fa-heart"></i> 245</span>
-            <span><i class="fas fa-comment"></i> 32</span>
-          </div>
-        </div>
-      </div>
-      
-      <div class="instagram-post">
-        <img src="https://images.unsplash.com/photo-1599407950360-ee9655c83b25?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=435&q=80" alt="Instagram Post">
-        <div class="instagram-overlay">
-          <div class="instagram-actions">
-            <span><i class="fas fa-heart"></i> 189</span>
-            <span><i class="fas fa-comment"></i> 24</span>
-          </div>
-        </div>
-      </div>
-      
-      <div class="instagram-post">
-        <img src="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="Instagram Post">
-        <div class="instagram-overlay">
-          <div class="instagram-actions">
-            <span><i class="fas fa-heart"></i> 312</span>
-            <span><i class="fas fa-comment"></i> 41</span>
-          </div>
-        </div>
-      </div>
-      
-      <div class="instagram-post">
-        <img src="https://images.unsplash.com/photo-1633681926022-84c23e8f85b9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=435&q=80" alt="Instagram Post">
-        <div class="instagram-overlay">
-          <div class="instagram-actions">
-            <span><i class="fas fa-heart"></i> 278</span>
-            <span><i class="fas fa-comment"></i> 35</span>
-          </div>
-        </div>
-      </div>
-      
-      <div class="instagram-post">
-        <img src="https://images.unsplash.com/photo-1597076545399-91f4d69d7745?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=580&q=80" alt="Instagram Post">
-        <div class="instagram-overlay">
-          <div class="instagram-actions">
-            <span><i class="fas fa-heart"></i> 201</span>
-            <span><i class="fas fa-comment"></i> 28</span>
-          </div>
-        </div>
-      </div>
-      
-      <div class="instagram-post">
-        <img src="https://images.unsplash.com/photo-1596703263926-eb076dbd478c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80" alt="Instagram Post">
-        <div class="instagram-overlay">
-          <div class="instagram-actions">
-            <span><i class="fas fa-heart"></i> 267</span>
-            <span><i class="fas fa-comment"></i> 31</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    <div class="instagram-cta">
-      <p>Tag us <strong>@stylettebeautysalon_</strong> in your photos for a chance to be featured!</p>
-      <a href="https://www.instagram.com/stylettebeautysalon_?utm_source=qr&igsh=MWZmYndwdXZoN3hkeQ==" target="_blank" class="btn">
-        <i class="fab fa-instagram"></i> Follow Us
-      </a>
-    </div>
-  </div>
-</section>
+    <!-- Instagram Section -->
+    <section id="instagram" class="instagram">
+      <div class="container">
+        <h2 class="section-title">Follow Us on Instagram</h2>
+        <p class="instagram-subtitle">@stylettebeautysalon_</p>
 
+        <div class="instagram-feed">
+          <div class="instagram-post">
+            <img src="1.heic" alt="Instagram Post" />
+            <div class="instagram-overlay">
+              <div class="instagram-actions">
+                <span><i class="fas fa-heart"></i> 245</span>
+                <span><i class="fas fa-comment"></i> 32</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="instagram-post">
+            <img src="2.heic" alt="Instagram Post" />
+            <div class="instagram-overlay">
+              <div class="instagram-actions">
+                <span><i class="fas fa-heart"></i> 189</span>
+                <span><i class="fas fa-comment"></i> 24</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="instagram-post">
+            <img src="3.heic" alt="Instagram Post" />
+            <div class="instagram-overlay">
+              <div class="instagram-actions">
+                <span><i class="fas fa-heart"></i> 312</span>
+                <span><i class="fas fa-comment"></i> 41</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="instagram-post">
+            <img src="4.heic" alt="Instagram Post" />
+            <div class="instagram-overlay">
+              <div class="instagram-actions">
+                <span><i class="fas fa-heart"></i> 278</span>
+                <span><i class="fas fa-comment"></i> 35</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="instagram-post">
+            <img src="5.heic" alt="Instagram Post" />
+            <div class="instagram-overlay">
+              <div class="instagram-actions">
+                <span><i class="fas fa-heart"></i> 201</span>
+                <span><i class="fas fa-comment"></i> 28</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="instagram-post">
+            <img src="6.heic" alt="Instagram Post" />
+            <div class="instagram-overlay">
+              <div class="instagram-actions">
+                <span><i class="fas fa-heart"></i> 267</span>
+                <span><i class="fas fa-comment"></i> 31</span>
+              </div>
+            </div>
+          </div>
+ <div class="instagram-post">
+            <img src="7.jpeg" alt="Instagram Post" />
+            <div class="instagram-overlay">
+              <div class="instagram-actions">
+                <span><i class="fas fa-heart"></i> 267</span>
+                <span><i class="fas fa-comment"></i> 31</span>
+              </div>
+            </div>
+          </div>
+
+
+           <div class="instagram-post">
+        <img src="10.heic" alt="">
+            <div class="instagram-overlay">
+              <div class="instagram-actions">
+                <span><i class="fas fa-heart"></i> 267</span>
+                <span><i class="fas fa-comment"></i> 31</span>
+              </div>
+            </div>
+          </div>
+
+
+
+
+        </div>
+
+        <div class="instagram-cta">
+          <p>
+            Tag us <strong>@stylettebeautysalon_</strong> in your photos for a
+            chance to be featured!
+          </p>
+          <a href="7.jpeg" target="_blank" class="btn">
+            <i class="fab fa-instagram"></i> Follow Us
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials">
+      <div class="container">
+        <h2 class="section-title">What Our Clients Say</h2>
+
+        <div class="testimonials-container">
+          <div class="testimonial-nav prev">
+            <i class="fas fa-chevron-left"></i>
+          </div>
+
+          <div class="testimonial-nav next">
+            <i class="fas fa-chevron-right"></i>
+          </div>
+
+          <div class="testimonials-slide">
+            <!-- Testimonial 1 -->
+            <div class="testimonial-card">
+              <div class="testimonial-text">
+                The facial treatment I received was exceptional! My skin has
+                never felt better. The esthetician was knowledgeable and made me
+                feel completely relaxed throughout the entire process.
+              </div>
+              <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <div class="testimonial-author">
+                <div class="author-avatar">
+                  <img
+                    src="https://randomuser.me/api/portraits/women/65.jpg"
+                    alt="Sarah M."
+                  />
+                </div>
+                <div class="author-details">
+                  <h4>Sarah M.</h4>
+                  <p>Skin Care Client</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 2 -->
+            <div class="testimonial-card">
+              <div class="testimonial-text">
+                I got my wedding makeup done here and I couldn't have been
+                happier! The team listened to what I wanted and executed it
+                perfectly. My makeup lasted all day and night through all the
+                celebrations!
+              </div>
+              <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <div class="testimonial-author">
+                <div class="author-avatar">
+                  <img
+                    src="https://randomuser.me/api/portraits/women/32.jpg"
+                    alt="Jennifer L."
+                  />
+                </div>
+                <div class="author-details">
+                  <h4>Jennifer L.</h4>
+                  <p>Bridal Client</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 3 -->
+            <div class="testimonial-card">
+              <div class="testimonial-text">
+                The hair stylists at Stylette are true artists! They transformed
+                my dull hair into shiny, healthy locks. I always leave feeling
+                like a new person. Highly recommend their hair treatments!
+              </div>
+              <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </div>
+              <div class="testimonial-author">
+                <div class="author-avatar">
+                  <img
+                    src="https://randomuser.me/api/portraits/women/44.jpg"
+                    alt="Michelle R."
+                  />
+                </div>
+                <div class="author-details">
+                  <h4>Michelle R.</h4>
+                  <p>Regular Client</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 4 -->
+            <div class="testimonial-card">
+              <div class="testimonial-text">
+                The manicure and pedicure I received were absolutely wonderful.
+                The nail technician was meticulous and the results lasted for
+                weeks. The spa atmosphere is so relaxing and luxurious.
+              </div>
+              <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <div class="testimonial-author">
+                <div class="author-avatar">
+                  <img
+                    src="https://randomuser.me/api/portraits/women/68.jpg"
+                    alt="Priya S."
+                  />
+                </div>
+                <div class="author-details">
+                  <h4>Priya S.</h4>
+                  <p>Nail Care Client</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 5 -->
+            <div class="testimonial-card">
+              <div class="testimonial-text">
+                I've been coming to Stylette for over a year now for their
+                waxing services, and I wouldn't go anywhere else. The staff is
+                professional, and they make the process as comfortable as
+                possible.
+              </div>
+              <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <div class="testimonial-author">
+                <div class="author-avatar">
+                  <img
+                    src="https://randomuser.me/api/portraits/women/27.jpg"
+                    alt="Emma T."
+                  />
+                </div>
+                <div class="author-details">
+                  <h4>Emma T.</h4>
+                  <p>Regular Waxing Client</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-controls">
+            <div class="testimonial-dot active" data-index="0"></div>
+            <div class="testimonial-dot" data-index="1"></div>
+            <div class="testimonial-dot" data-index="2"></div>
+            <div class="testimonial-dot" data-index="3"></div>
+            <div class="testimonial-dot" data-index="4"></div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Appointment Section -->
     <section id="appointment" class="appointment">
@@ -1062,7 +1444,6 @@
                 href="https://www.instagram.com/stylettebeautysalon_?utm_source=qr&igsh=MWZmYndwdXZoN3hkeQ=="
                 ><i class="fab fa-instagram"></i
               ></a>
-           
             </div>
           </div>
 
@@ -1074,7 +1455,7 @@
             <p><a href="#gallery">Gallery</a></p>
             <p><a href="#contact">Contact</a></p>
           </div>
-<!-- 
+          <!-- 
           <div class="footer-col">
             <h3>Services</h3>
             <p>Skin Care</p>
@@ -1101,7 +1482,88 @@
       </div>
     </footer>
     <script async src="//www.instagram.com/embed.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const slide = document.querySelector(".testimonials-slide");
+        const testimonials = document.querySelectorAll(".testimonial-card");
+        const dots = document.querySelectorAll(".testimonial-dot");
+        const prevBtn = document.querySelector(".testimonial-nav.prev");
+        const nextBtn = document.querySelector(".testimonial-nav.next");
 
+        let currentIndex = 0;
+        let autoSlideInterval;
+
+        // Function to update slide position
+        function updateSlide() {
+          slide.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+          // Update active dot
+          dots.forEach((dot, index) => {
+            if (index === currentIndex) {
+              dot.classList.add("active");
+            } else {
+              dot.classList.remove("active");
+            }
+          });
+        }
+
+        // Function to move to next slide
+        function nextSlide() {
+          currentIndex = (currentIndex + 1) % testimonials.length;
+          updateSlide();
+        }
+
+        // Function to move to previous slide
+        function prevSlide() {
+          currentIndex =
+            (currentIndex - 1 + testimonials.length) % testimonials.length;
+          updateSlide();
+        }
+
+        // Set up auto-sliding
+        function startAutoSlide() {
+          autoSlideInterval = setInterval(nextSlide, 4000); // Change slide every 5 seconds
+        }
+
+        // Stop auto-sliding
+        function stopAutoSlide() {
+          clearInterval(autoSlideInterval);
+        }
+
+        // Event listeners for navigation
+        nextBtn.addEventListener("click", function () {
+          stopAutoSlide();
+          nextSlide();
+          startAutoSlide();
+        });
+
+        prevBtn.addEventListener("click", function () {
+          stopAutoSlide();
+          prevSlide();
+          startAutoSlide();
+        });
+
+        // Event listeners for dots
+        dots.forEach((dot) => {
+          dot.addEventListener("click", function () {
+            stopAutoSlide();
+            currentIndex = parseInt(this.getAttribute("data-index"));
+            updateSlide();
+            startAutoSlide();
+          });
+        });
+
+        // Pause auto-slide when hovering over testimonials
+        const testimonialsContainer = document.querySelector(
+          ".testimonials-container"
+        );
+        testimonialsContainer.addEventListener("mouseenter", stopAutoSlide);
+        testimonialsContainer.addEventListener("mouseleave", startAutoSlide);
+
+        // Start auto-sliding on page load
+        startAutoSlide();
+      });
+    </script>
     <script>
       // Mobile Menu Toggle
       const mobileMenuBtn = document.querySelector(".mobile-menu-btn");

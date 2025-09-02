@@ -8,12 +8,306 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-
     <style>
+      /* Consolidated CSS */
+      :root {
+        --primary: #2c2c2c;
+        --accent: #6a0572;
+        --light: #f8f5f0;
+        --dark: #1a1a1a;
+        --text: #333333;
+        --gold: #d4af37;
+        --underline: #6a0572;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      body {
+        background-color: var(--light);
+        color: var(--text);
+        line-height: 1.6;
+      }
+
+      .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0;
+      }
+
+      section {
+        padding: 30px 0;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-weight: 600;
+        line-height: 1.3;
+        margin-bottom: 20px;
+      }
+
+      .btn,
+      .card-btn {
+        display: inline-block;
+        background-color: var(--accent);
+        color: white;
+        padding: 12px 30px;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        border: none;
+        cursor: pointer;
+      }
+
+      .card-btn {
+        padding: 8px 22px;
+        bottom: 0px;
+      }
+
+      .btn:hover {
+        background-color: purple;
+        color: var(--light);
+        padding: 14px 34px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .card-btn:hover {
+        background-color: purple;
+        color: var(--light);
+        padding: 10px 24px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .slot-book {
+        color: white !important;
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 50px;
+        position: relative;
+      }
+
+      .section-title:after {
+        content: "";
+        position: absolute;
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 3px;
+        background-color: var(--accent);
+      }
+
+      /* Header Styles */
+      header {
+        background-color: rgba(255, 255, 255, 0.95);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        position: fixed;
+        width: 100%;
+        z-index: 1000;
+        top: 0;
+      }
+
+      .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 0;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+      }
+
+      .logo-text {
+        font-size: 24px;
+        font-weight: 700;
+        color: var(--primary);
+        text-transform: uppercase;
+        line-height: 1.1;
+      }
+
+      .logo-subtext {
+        font-size: 10px;
+        letter-spacing: 1.5px;
+        display: block;
+      }
+
+      .nav-menu {
+        display: flex;
+        list-style: none;
+        align-items: center;
+      }
+
+      .nav-menu li {
+        margin-left: 30px;
+      }
+
+      .nav-menu a {
+        text-decoration: none;
+        color: var(--primary);
+        font-weight: 500;
+        transition: color 0.3s ease;
+        position: relative;
+      }
+
+   /* Hover effect (exclude last link button) */
+.nav-menu li:not(:last-child) a::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--underline);
+  transition: width 0.3s ease;
+}
+
+.nav-menu li:not(:last-child) a:hover::after {
+  width: 100%;
+}
+
+.nav-menu li:not(:last-child) a:hover {
+  color: var(--underline);
+}
+
+/* Active tab indicator (exclude last link button) */
+.nav-menu li:not(:last-child) a.active {
+  color: var(--underline);
+}
+
+.nav-menu li:not(:last-child) a.active::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--underline);
+}
+
+
+
+      .mobile-menu-btn {
+        display: none;
+        font-size: 24px;
+        cursor: pointer;
+        color: var(--primary);
+      }
+
+      /* Hero Section */
+      .hero {
+        background-image: url("https://t4.ftcdn.net/jpg/07/88/37/65/360_F_788376540_57CUrVW1k0LA2Lp6lRo9Ydzyj4T3omlv.jpg");
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        color: white;
+        padding-top: 170px;
+      }
+
+      .hero-content h1 {
+        font-size: 3.5rem;
+        margin-bottom: 20px;
+      }
+
+      .hero-content p {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      /* About Section */
+      .about-content {
+        display: flex;
+        align-items: center;
+        gap: 50px;
+      }
+
+      .about-text {
+        flex: 1;
+        text-align: justify;
+      }
+
+      .about-image {
+        flex: 1;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .about-image img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      /* Services Section */
+      .services {
+        background-color: white;
+      }
+
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+      }
+
+      .service-card {
+        background-color: var(--light);
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s ease;
+        position: relative;
+      }
+
+      .service-card:hover {
+        transform: translateY(-10px);
+      }
+
+      .service-image {
+        height: 200px;
+        overflow: hidden;
+      }
+
+      .service-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .service-card:hover .service-image img {
+        transform: scale(1.1);
+      }
+
+      .service-content {
+        padding: 20px;
+      }
+
+      .service-content h3 {
+        color: var(--primary);
+      }
+
       /* Instagram Section Styles */
       .instagram {
         background-color: #fafafa;
-        padding: 80px 0;
+        /* padding: 80px 0; */
       }
 
       .instagram-subtitle {
@@ -113,305 +407,161 @@
         box-shadow: 0 10px 20px rgba(188, 24, 136, 0.3);
       }
 
-      @media (max-width: 768px) {
-        .instagram-feed {
-          grid-template-columns: repeat(2, 1fr);
-        }
-      }
-    </style>
-    <style>
-      /* Global Styles */
-      :root {
-        --primary: #2c2c2c;
-        --accent: #6a0572;
-        --light: #f8f5f0;
-        --dark: #1a1a1a;
-        --text: #333333;
-      }
-
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      }
-
-      body {
-        background-color: var(--light);
-        color: var(--text);
-        line-height: 1.6;
-      }
-
-      .container {
-        width: 90%;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0;
-      }
-
-      section {
-        padding: 80px 0;
-      }
-
-      h1,
-      h2,
-      h3,
-      h4 {
-        font-weight: 600;
-        line-height: 1.3;
-        margin-bottom: 20px;
-      }
-
-      .btn {
-        display: inline-block;
-        background-color: var(--accent);
-        color: white;
-        padding: 12px 30px;
-        border-radius: 30px;
-        text-decoration: none;
-        font-weight: 600;
-        transition: all 0.3s ease;
-        border: none;
-        cursor: pointer;
-      }
-
-      .card-btn {
-        bottom: 0px; /* card ke bottom se distance */
-        display: inline-block;
-        background-color: var(--accent);
-        color: white;
-        padding: 8px 22px;
-        border-radius: 30px;
-        text-decoration: none;
-        font-weight: 600;
-        transition: all 0.3s ease;
-        border: none;
-        cursor: pointer;
-      }
-
-      .card-btn:hover {
-        background-color: purple;
-        color: var(--light);
-        padding: 10px 26px;
-
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-      }
-
-      .btn:hover {
-        background-color: purple;
-        color: var(--light);
-        padding: 14px 34px;
-
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-      }
-
-      .section-title {
-        text-align: center;
-        margin-bottom: 50px;
-        position: relative;
-      }
-
-      .section-title:after {
-        content: "";
-        position: absolute;
-        bottom: -15px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 80px;
-        height: 3px;
-        background-color: var(--accent);
-      }
-
-      /* Header Styles */
-      header {
-        background-color: rgba(255, 255, 255, 0.95);
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        position: fixed;
-        width: 100%;
-        z-index: 1000;
-        top: 0;
-      }
-
-      .header-container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 15px 0;
-      }
-
-      .logo {
-        display: flex;
-        align-items: center;
-      }
-
-      .logo-text {
-        font-size: 24px;
-        font-weight: 700;
-        color: var(--primary);
-        text-transform: uppercase;
-        line-height: 1.1;
-      }
-
-      .logo-subtext {
-        font-size: 10px;
-        letter-spacing: 1.5px;
-        display: block;
-      }
-
-      .nav-menu {
-        display: flex;
-        list-style: none;
-      }
-
-      .nav-menu li {
-        margin-left: 30px;
-      }
-
-      .nav-menu a {
-        text-decoration: none;
-        color: var(--primary);
-        font-weight: 500;
-        transition: color 0.3s ease;
-      }
-
-      .nav-menu a:hover {
-        color: var(--accent);
-      }
-
-      .mobile-menu-btn {
-        display: none;
-        font-size: 24px;
-        cursor: pointer;
-      }
-
-      /* Hero Section */
-      .hero {
-        background-image: url(https://t4.ftcdn.net/jpg/07/88/37/65/360_F_788376540_57CUrVW1k0LA2Lp6lRo9Ydzyj4T3omlv.jpg);
+      /* Testimonials Section */
+      .testimonials {
+        background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+          url("https://images.unsplash.com/photo-1560066984-138dadb4c035?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80");
         background-size: cover;
         background-position: center;
-        height: 100vh;
-        display: flex;
-        align-items: center;
-        text-align: center;
         color: white;
-        padding-top: 170px;
+        padding: 100px 0;
+        text-align: center;
+        border-radius: 15px;
+        overflow: hidden;
       }
 
-      .hero-content h1 {
-        font-size: 3.5rem;
-        margin-bottom: 20px;
+      .testimonials-container {
+        position: relative;
+        max-width: 900px;
+        margin: 0 auto;
+        overflow: hidden;
       }
 
-      .hero-content p {
-        font-size: 1.2rem;
+      .testimonials-slide {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+      }
+
+      .testimonial-card {
+        flex: 0 0 100%;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 25px;
+        border-radius: 10px;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      }
+
+      .testimonial-text {
+        font-style: italic;
         margin-bottom: 30px;
-        max-width: 700px;
-        margin-left: auto;
-        margin-right: auto;
+        line-height: 1.8;
+        font-size: 1.1rem;
+        position: relative;
+        padding: 0 30px;
       }
 
-      /* About Section */
-      .about-content {
+      .testimonial-text:before,
+      .testimonial-text:after {
+        content: "";
+        font-size: 60px;
+        color: var(--gold);
+        position: absolute;
+        line-height: 1;
+      }
+
+      .testimonial-text:before {
+        top: -20px;
+        left: 0;
+      }
+
+      .testimonial-text:after {
+        content: "";
+        bottom: -40px;
+        right: 0;
+      }
+
+      .testimonial-author {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .author-avatar {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-bottom: 15px;
+        border: 3px solid var(--gold);
+      }
+
+      .author-avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .author-details h4 {
+        margin-bottom: 5px;
+        font-size: 1.2rem;
+      }
+
+      .author-details p {
+        color: var(--gold);
+        font-size: 0.9rem;
+      }
+
+      .testimonial-controls {
+        display: flex;
+        justify-content: center;
+        margin-top: 40px;
+        gap: 10px;
+      }
+
+      .testimonial-dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.3);
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .testimonial-dot.active {
+        background: var(--gold);
+        transform: scale(1.2);
+      }
+
+      .testimonial-nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(255, 255, 255, 0.2);
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
         display: flex;
         align-items: center;
-        gap: 50px;
-      }
-
-      .about-text {
-        flex: 1;
-      }
-
-      .about-image {
-        flex: 1;
-        border-radius: 10px;
-        overflow: hidden;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-      }
-
-      .about-image img {
-        width: 100%;
-        height: auto;
-        display: block;
-      }
-
-      /* Services Section */
-      .services {
-        background-color: white;
-      }
-
-      .services-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 30px;
-      }
-
-      .service-card {
-        background-color: var(--light);
-        border-radius: 10px;
-        overflow: hidden;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        transition: transform 0.3s ease;
-        position: relative;
-      }
-
-      .service-card:hover {
-        transform: translateY(-10px);
-      }
-
-      .service-image {
-        height: 200px;
-        overflow: hidden;
-      }
-
-      .service-image img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 0.5s ease;
-      }
-
-      .service-card:hover .service-image img {
-        transform: scale(1.1);
-      }
-
-      .service-content {
-        padding: 20px;
-      }
-
-      .service-content h3 {
-        color: var(--primary);
-      }
-
-      /* Gallery Section */
-      .gallery-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 15px;
-      }
-
-      .gallery-item {
-        height: 250px;
-        overflow: hidden;
-        border-radius: 8px;
-        position: relative;
+        justify-content: center;
         cursor: pointer;
+        transition: all 0.3s ease;
+        z-index: 10;
       }
 
-      .gallery-item img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 0.5s ease;
+      .testimonial-nav:hover {
+        background: var(--gold);
       }
 
-      .gallery-item:hover img {
-        transform: scale(1.1);
+      .testimonial-nav.prev {
+        left: 0;
+      }
+
+      .testimonial-nav.next {
+        right: 0;
+      }
+
+      /* Rating Stars */
+      .rating {
+        color: var(--gold);
+        margin: 15px 0;
+        font-size: 1.2rem;
       }
 
       /* Appointment Section */
       .appointment {
         background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
-          url("https://images.unsplash.com/photo-1595476108010-b4d1f102b59b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1846&q=80");
+          url("https://images.unsplash.com/photo-1599458254920-0f3f6c32f0c9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80");
         background-size: cover;
         background-position: center;
         color: white;
@@ -563,6 +713,14 @@
         .hero-content h1 {
           font-size: 2.5rem;
         }
+
+        .testimonial-nav.prev {
+          left: 0;
+        }
+
+        .testimonial-nav.next {
+          right: 0;
+        }
       }
 
       @media (max-width: 768px) {
@@ -594,172 +752,11 @@
         .hero-content h1 {
           font-size: 2rem;
         }
-      }
-    </style>
-    <style>
-      /* Testimonials Section */
-      .testimonials {
-        background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
-          url("https://images.unsplash.com/photo-1560066984-138dadb4c035?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80");
-        background-size: cover;
-        background-position: center;
-        color: white;
-        padding: 100px 0;
-        text-align: center;
-        border-radius: 15px;
-        overflow: hidden;
-      }
 
-      .testimonials-container {
-        position: relative;
-        max-width: 900px;
-        margin: 0 auto;
-        overflow: hidden;
-      }
-
-      .testimonials-slide {
-        display: flex;
-        transition: transform 0.5s ease-in-out;
-      }
-
-      .testimonial-card {
-        flex: 0 0 100%;
-        background: rgba(255, 255, 255, 0.1);
-        padding: 40px;
-        border-radius: 10px;
-        backdrop-filter: blur(10px);
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-      }
-
-      .testimonial-text {
-        font-style: italic;
-        margin-bottom: 30px;
-        line-height: 1.8;
-        font-size: 1.1rem;
-        position: relative;
-        padding: 0 30px;
-      }
-
-      .testimonial-text:before,
-      .testimonial-text:after {
-        content: "";
-        font-size: 60px;
-        color: #d4af37;
-        position: absolute;
-        line-height: 1;
-      }
-
-      .testimonial-text:before {
-        top: -20px;
-        left: 0;
-      }
-
-      .testimonial-text:after {
-        content: "";
-        bottom: -40px;
-        right: 0;
-      }
-
-      .testimonial-author {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .author-avatar {
-        width: 70px;
-        height: 70px;
-        border-radius: 50%;
-        overflow: hidden;
-        margin-bottom: 15px;
-        border: 3px solid #d4af37;
-      }
-
-      .author-avatar img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-
-      .author-details h4 {
-        margin-bottom: 5px;
-        font-size: 1.2rem;
-      }
-
-      .author-details p {
-        color: #d4af37;
-        font-size: 0.9rem;
-      }
-
-      .testimonial-controls {
-        display: flex;
-        justify-content: center;
-        margin-top: 40px;
-        gap: 10px;
-      }
-
-      .testimonial-dot {
-        width: 12px;
-        height: 12px;
-        border-radius: 50%;
-        background: rgba(255, 255, 255, 0.3);
-        cursor: pointer;
-        transition: all 0.3s ease;
-      }
-
-      .testimonial-dot.active {
-        background: #d4af37;
-        transform: scale(1.2);
-      }
-
-      .testimonial-nav {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        background: rgba(255, 255, 255, 0.2);
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        z-index: 10;
-      }
-
-      .testimonial-nav:hover {
-        background: #d4af37;
-      }
-
-      .testimonial-nav.prev {
-        left: -70px;
-      }
-
-      .testimonial-nav.next {
-        right: -70px;
-      }
-
-      /* Rating Stars */
-      .rating {
-        color: #d4af37;
-        margin: 15px 0;
-        font-size: 1.2rem;
-      }
-
-      /* Responsive Styles */
-      @media (max-width: 992px) {
-        .testimonial-nav.prev {
-          left: -30px;
+        .instagram-feed {
+          grid-template-columns: repeat(2, 1fr);
         }
 
-        .testimonial-nav.next {
-          right: -30px;
-        }
-      }
-
-      @media (max-width: 768px) {
         .testimonial-nav {
           display: none;
         }
@@ -780,7 +777,11 @@
     <header>
       <div class="container header-container">
         <div class="logo">
-          <img src="logo.png" style="height: 80px" alt="" />
+          <img
+            src="logo.png"
+            style="height: 80px"
+            alt="Stylette Beauty Salon Logo"
+          />
         </div>
 
         <div class="mobile-menu-btn">
@@ -791,9 +792,10 @@
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#services">Services</a></li>
-          <li><a href="#gallery">Gallery</a></li>
-          <li><a href="#appointment">Book Now</a></li>
           <li><a href="#contact">Contact</a></li>
+          <li>
+            <a class="card-btn slot-book" href="#appointment">Book your Slot</a>
+          </li>
         </ul>
       </div>
     </header>
@@ -819,7 +821,7 @@
           <div class="about-image">
             <img
               src="https://m.media-amazon.com/images/I/71POqHTHB7L.jpg"
-              alt="about img"
+              alt="Stylette Beauty Salon interior"
             />
           </div>
           <div class="about-text">
@@ -909,7 +911,7 @@
             <div class="service-image">
               <img
                 src="https://media.istockphoto.com/id/1340302535/photo/beautiful-indian-woman-getting-ready-to-a-wedding-reception-at-the-beauty-parlor.jpg?s=612x612&w=0&k=20&c=GzhivtaqLIDXBQ69R0DlIOfwY4aOYUI67gxWKTM3ooA="
-                alt="Nail Care"
+                alt="Wedding and event Preparation"
               />
             </div>
             <div class="service-content">
@@ -925,7 +927,7 @@
             <div class="service-image">
               <img
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOWZp-JwVMweiNUnmVM5DDWJx-385bh46Qww&s"
-                alt="Nail Care"
+                alt="Waxing"
               />
             </div>
             <div class="service-content">
@@ -941,7 +943,7 @@
             <div class="service-image">
               <img
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1FQVDRcYApbf1oFPk-orqcg1W_Wzav75TuA&s"
-                alt="Nail Care"
+                alt="Manicure"
               />
             </div>
             <div class="service-content">
@@ -957,7 +959,7 @@
             <div class="service-image">
               <img
                 src="https://sp-ao.shortpixel.ai/client/to_auto,q_glossy,ret_img,w_500,h_313/https://bridemeup.in/wp-content/uploads/2019/10/z5.jpg"
-                alt="Nail Care"
+                alt="Make-up Services"
               />
             </div>
             <div class="service-content">
@@ -973,7 +975,7 @@
             <div class="service-image">
               <img
                 src="https://www.selfobsessed.in/wp-content/uploads/2024/04/Bridal-Makeup.jpeg"
-                alt="Nail Care"
+                alt="Make-up"
               />
             </div>
             <div class="service-content">
@@ -989,7 +991,7 @@
             <div class="service-image">
               <img
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUuOPB-mZ1yP-7kysIBtguPWmBNkDJ4Khocw&s"
-                alt="Nail Care"
+                alt="Acne treatments"
               />
             </div>
             <div class="service-content">
@@ -1005,7 +1007,7 @@
             <div class="service-image">
               <img
                 src="https://cdn.shopify.com/s/files/1/0520/4983/8237/files/shampoo_hair_shower.jpg?v=1686243149"
-                alt="Nail Care"
+                alt="Shampu & Conditioning"
               />
             </div>
             <div class="service-content">
@@ -1021,7 +1023,7 @@
             <div class="service-image">
               <img
                 src="https://daydream.spa-center.in/images/about.jpg"
-                alt="Nail Care"
+                alt="SPA Services"
               />
             </div>
             <div class="service-content">
@@ -1038,7 +1040,7 @@
             <div class="service-image">
               <img
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWFRfz5DVg-2-7PcXH_eJezw0_C53q1o2mDA&s"
-                alt="Nail Care"
+                alt="Hair Styling"
               />
             </div>
             <div class="service-content">
@@ -1062,7 +1064,7 @@
 
         <div class="instagram-feed">
           <div class="instagram-post">
-            <img src="1.heic" alt="Instagram Post" />
+            <img src="1.heic" alt="Instagram Post" loading="lazy" />
             <div class="instagram-overlay">
               <div class="instagram-actions">
                 <span><i class="fas fa-heart"></i> 245</span>
@@ -1072,7 +1074,7 @@
           </div>
 
           <div class="instagram-post">
-            <img src="2.heic" alt="Instagram Post" />
+            <img src="2.heic" alt="Instagram Post" loading="lazy" />
             <div class="instagram-overlay">
               <div class="instagram-actions">
                 <span><i class="fas fa-heart"></i> 189</span>
@@ -1082,7 +1084,7 @@
           </div>
 
           <div class="instagram-post">
-            <img src="3.heic" alt="Instagram Post" />
+            <img src="3.heic" alt="Instagram Post" loading="lazy" />
             <div class="instagram-overlay">
               <div class="instagram-actions">
                 <span><i class="fas fa-heart"></i> 312</span>
@@ -1092,7 +1094,7 @@
           </div>
 
           <div class="instagram-post">
-            <img src="4.heic" alt="Instagram Post" />
+            <img src="4.heic" alt="Instagram Post" loading="lazy" />
             <div class="instagram-overlay">
               <div class="instagram-actions">
                 <span><i class="fas fa-heart"></i> 278</span>
@@ -1102,7 +1104,7 @@
           </div>
 
           <div class="instagram-post">
-            <img src="5.heic" alt="Instagram Post" />
+            <img src="5.heic" alt="Instagram Post" loading="lazy" />
             <div class="instagram-overlay">
               <div class="instagram-actions">
                 <span><i class="fas fa-heart"></i> 201</span>
@@ -1112,7 +1114,7 @@
           </div>
 
           <div class="instagram-post">
-            <img src="6.heic" alt="Instagram Post" />
+            <img src="6.heic" alt="Instagram Post" loading="lazy" />
             <div class="instagram-overlay">
               <div class="instagram-actions">
                 <span><i class="fas fa-heart"></i> 267</span>
@@ -1120,19 +1122,8 @@
               </div>
             </div>
           </div>
- <div class="instagram-post">
-            <img src="7.jpeg" alt="Instagram Post" />
-            <div class="instagram-overlay">
-              <div class="instagram-actions">
-                <span><i class="fas fa-heart"></i> 267</span>
-                <span><i class="fas fa-comment"></i> 31</span>
-              </div>
-            </div>
-          </div>
-
-
-           <div class="instagram-post">
-        <img src="10.heic" alt="">
+          <div class="instagram-post">
+            <img src="7.jpeg" alt="Instagram Post" loading="lazy" />
             <div class="instagram-overlay">
               <div class="instagram-actions">
                 <span><i class="fas fa-heart"></i> 267</span>
@@ -1141,9 +1132,15 @@
             </div>
           </div>
 
-
-
-
+          <div class="instagram-post">
+            <img src="10.heic" alt="Instagram Post" loading="lazy" />
+            <div class="instagram-overlay">
+              <div class="instagram-actions">
+                <span><i class="fas fa-heart"></i> 267</span>
+                <span><i class="fas fa-comment"></i> 31</span>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div class="instagram-cta">
@@ -1151,7 +1148,11 @@
             Tag us <strong>@stylettebeautysalon_</strong> in your photos for a
             chance to be featured!
           </p>
-          <a href="7.jpeg" target="_blank" class="btn">
+          <a
+            href="https://www.instagram.com/stylettebeautysalon_/"
+            target="_blank"
+            class="btn"
+          >
             <i class="fab fa-instagram"></i> Follow Us
           </a>
         </div>
@@ -1175,9 +1176,7 @@
             <!-- Testimonial 1 -->
             <div class="testimonial-card">
               <div class="testimonial-text">
-                The facial treatment I received was exceptional! My skin has
-                never felt better. The esthetician was knowledgeable and made me
-                feel completely relaxed throughout the entire process.
+                Punctually, Cleanliness, Quantity, professionalism and Value
               </div>
               <div class="rating">
                 <i class="fas fa-star"></i>
@@ -1187,27 +1186,16 @@
                 <i class="fas fa-star"></i>
               </div>
               <div class="testimonial-author">
-                <div class="author-avatar">
-                  <img
-                    src="https://randomuser.me/api/portraits/women/65.jpg"
-                    alt="Sarah M."
-                  />
-                </div>
                 <div class="author-details">
-                  <h4>Sarah M.</h4>
-                  <p>Skin Care Client</p>
+                  <h4>Sapna Thakur</h4>
+                  <p>hair Cut & Waxing Client</p>
                 </div>
               </div>
             </div>
 
             <!-- Testimonial 2 -->
             <div class="testimonial-card">
-              <div class="testimonial-text">
-                I got my wedding makeup done here and I couldn't have been
-                happier! The team listened to what I wanted and executed it
-                perfectly. My makeup lasted all day and night through all the
-                celebrations!
-              </div>
+              <div class="testimonial-text">Excellence in pure form</div>
               <div class="rating">
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
@@ -1216,26 +1204,16 @@
                 <i class="fas fa-star"></i>
               </div>
               <div class="testimonial-author">
-                <div class="author-avatar">
-                  <img
-                    src="https://randomuser.me/api/portraits/women/32.jpg"
-                    alt="Jennifer L."
-                  />
-                </div>
                 <div class="author-details">
-                  <h4>Jennifer L.</h4>
-                  <p>Bridal Client</p>
+                  <h4>Jaya Singh</h4>
+                  <p>Hairstyling, Haircut and shampoo & conditioning</p>
                 </div>
               </div>
             </div>
 
             <!-- Testimonial 3 -->
             <div class="testimonial-card">
-              <div class="testimonial-text">
-                The hair stylists at Stylette are true artists! They transformed
-                my dull hair into shiny, healthy locks. I always leave feeling
-                like a new person. Highly recommend their hair treatments!
-              </div>
+              <div class="testimonial-text">I love her work</div>
               <div class="rating">
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
@@ -1244,14 +1222,8 @@
                 <i class="fas fa-star-half-alt"></i>
               </div>
               <div class="testimonial-author">
-                <div class="author-avatar">
-                  <img
-                    src="https://randomuser.me/api/portraits/women/44.jpg"
-                    alt="Michelle R."
-                  />
-                </div>
                 <div class="author-details">
-                  <h4>Michelle R.</h4>
+                  <h4>Deepali Ghawate</h4>
                   <p>Regular Client</p>
                 </div>
               </div>
@@ -1260,9 +1232,8 @@
             <!-- Testimonial 4 -->
             <div class="testimonial-card">
               <div class="testimonial-text">
-                The manicure and pedicure I received were absolutely wonderful.
-                The nail technician was meticulous and the results lasted for
-                weeks. The spa atmosphere is so relaxing and luxurious.
+                She did my makeup... I like so much.. thanks for my beautiful
+                Make-up
               </div>
               <div class="rating">
                 <i class="fas fa-star"></i>
@@ -1272,15 +1243,9 @@
                 <i class="fas fa-star"></i>
               </div>
               <div class="testimonial-author">
-                <div class="author-avatar">
-                  <img
-                    src="https://randomuser.me/api/portraits/women/68.jpg"
-                    alt="Priya S."
-                  />
-                </div>
                 <div class="author-details">
-                  <h4>Priya S.</h4>
-                  <p>Nail Care Client</p>
+                  <h4>Prerana Kamble</h4>
+                  <p>Regular Client</p>
                 </div>
               </div>
             </div>
@@ -1288,10 +1253,8 @@
             <!-- Testimonial 5 -->
             <div class="testimonial-card">
               <div class="testimonial-text">
-                I've been coming to Stylette for over a year now for their
-                waxing services, and I wouldn't go anywhere else. The staff is
-                professional, and they make the process as comfortable as
-                possible.
+                I did keratin in this salon.... I feel very happy.. Thank u so
+                much neha for great Experience...
               </div>
               <div class="rating">
                 <i class="fas fa-star"></i>
@@ -1301,15 +1264,77 @@
                 <i class="fas fa-star"></i>
               </div>
               <div class="testimonial-author">
-                <div class="author-avatar">
-                  <img
-                    src="https://randomuser.me/api/portraits/women/27.jpg"
-                    alt="Emma T."
-                  />
-                </div>
                 <div class="author-details">
-                  <h4>Emma T.</h4>
-                  <p>Regular Waxing Client</p>
+                  <h4>Usha Jadhav</h4>
+                  <p>Regular Client</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 6 -->
+            <div class="testimonial-card">
+              <div class="testimonial-text">
+                I do my haircut & clean up.. She doing very nice haircut &
+                cleanup.. I feel so fresh... Thank u Neha di
+              </div>
+              <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <div class="testimonial-author">
+                <div class="author-details">
+                  <h4>Payal Jadhav</h4>
+                  <p>Haircut Client</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 7 -->
+            <div class="testimonial-card">
+              <div class="testimonial-text">
+                The service was excellent. Idid waxing, eyebrows and fruit
+                facial. Neha has magic in her hands, waxing and eyebrows were
+                painless and the facial was wonderful. I felt asleep with her
+                smoothing massages
+              </div>
+              <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <div class="testimonial-author">
+                <div class="author-details">
+                  <h4>malaica Dmello</h4>
+                  <p>Facials Client</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 8 -->
+            <div class="testimonial-card">
+              <div class="testimonial-text">
+                I visited this parlour for hair cut and I am really happy with
+                hair cut. <br />
+                I would urge all the ladies in Panchgani to visit this parlour
+                once, you will be satisfied with the service. <br />
+                I am sure I'll go back here for the servises
+              </div>
+              <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <div class="testimonial-author">
+                <div class="author-details">
+                  <h4>Afroz Khan</h4>
+                  <p>Regular Client</p>
                 </div>
               </div>
             </div>
@@ -1321,6 +1346,9 @@
             <div class="testimonial-dot" data-index="2"></div>
             <div class="testimonial-dot" data-index="3"></div>
             <div class="testimonial-dot" data-index="4"></div>
+            <div class="testimonial-dot" data-index="5"></div>
+            <div class="testimonial-dot" data-index="6"></div>
+            <div class="testimonial-dot" data-index="7"></div>
           </div>
         </div>
       </div>
@@ -1421,6 +1449,7 @@
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3796.1546933290592!2d73.7988669!3d17.9249374!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2692e9874bec1%3A0x30381e6f9d9208c1!2sStylette%20Beauty%20Salon%20%26%20Make-up%20Studio!5e0!3m2!1sen!2sin!4v1756721714971!5m2!1sen!2sin"
               allowfullscreen=""
               loading="lazy"
+              title="Stylette Beauty Salon Location"
             ></iframe>
           </div>
         </div>
@@ -1452,18 +1481,8 @@
             <p><a href="#home">Home</a></p>
             <p><a href="#about">About Us</a></p>
             <p><a href="#services">Services</a></p>
-            <p><a href="#gallery">Gallery</a></p>
             <p><a href="#contact">Contact</a></p>
           </div>
-          <!-- 
-          <div class="footer-col">
-            <h3>Services</h3>
-            <p>Skin Care</p>
-            <p>Hair Styling</p>
-            <p>Nail Art</p>
-            <p>Makeup</p>
-            <p>Spa Treatments</p>
-          </div> -->
 
           <div class="footer-col">
             <h3>Contact Info</h3>
@@ -1481,134 +1500,180 @@
         </div>
       </div>
     </footer>
-    <script async src="//www.instagram.com/embed.js"></script>
+
     <script>
+      // Combined and optimized JavaScript
       document.addEventListener("DOMContentLoaded", function () {
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector(".mobile-menu-btn");
+        const navMenu = document.querySelector(".nav-menu");
+
+        if (mobileMenuBtn && navMenu) {
+          mobileMenuBtn.addEventListener("click", () => {
+            navMenu.classList.toggle("active");
+          });
+
+          // Close mobile menu when clicking on a link
+          document.querySelectorAll(".nav-menu a").forEach((link) => {
+            link.addEventListener("click", () => {
+              navMenu.classList.remove("active");
+            });
+          });
+        }
+
+        // Active nav link highlighting
+        const sections = document.querySelectorAll("section[id]");
+        const navLinks = document.querySelectorAll(".nav-menu a");
+
+        function highlightNavLink() {
+          let current = "";
+          const scrollPosition = window.pageYOffset;
+
+          sections.forEach((section) => {
+            const sectionTop = section.offsetTop - 100;
+            const sectionHeight = section.clientHeight;
+
+            if (
+              scrollPosition >= sectionTop &&
+              scrollPosition < sectionTop + sectionHeight
+            ) {
+              current = section.getAttribute("id");
+            }
+          });
+
+          navLinks.forEach((link) => {
+            link.classList.remove("active");
+            const href = link.getAttribute("href");
+            if (href && href.substring(1) === current) {
+              link.classList.add("active");
+            }
+          });
+        }
+
+        window.addEventListener("scroll", highlightNavLink);
+        window.addEventListener("load", highlightNavLink);
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+
+            const targetId = this.getAttribute("href");
+            if (targetId === "#") return;
+
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+              window.scrollTo({
+                top: targetElement.offsetTop - 80,
+                behavior: "smooth",
+              });
+            }
+          });
+        });
+
+        // Testimonials slider functionality
         const slide = document.querySelector(".testimonials-slide");
         const testimonials = document.querySelectorAll(".testimonial-card");
         const dots = document.querySelectorAll(".testimonial-dot");
         const prevBtn = document.querySelector(".testimonial-nav.prev");
         const nextBtn = document.querySelector(".testimonial-nav.next");
 
-        let currentIndex = 0;
-        let autoSlideInterval;
+        if (slide && testimonials.length > 0) {
+          let currentIndex = 0;
+          let autoSlideInterval;
 
-        // Function to update slide position
-        function updateSlide() {
-          slide.style.transform = `translateX(-${currentIndex * 100}%)`;
+          // Function to update slide position
+          function updateSlide() {
+            slide.style.transform = `translateX(-${currentIndex * 100}%)`;
 
-          // Update active dot
-          dots.forEach((dot, index) => {
-            if (index === currentIndex) {
-              dot.classList.add("active");
-            } else {
-              dot.classList.remove("active");
-            }
-          });
-        }
-
-        // Function to move to next slide
-        function nextSlide() {
-          currentIndex = (currentIndex + 1) % testimonials.length;
-          updateSlide();
-        }
-
-        // Function to move to previous slide
-        function prevSlide() {
-          currentIndex =
-            (currentIndex - 1 + testimonials.length) % testimonials.length;
-          updateSlide();
-        }
-
-        // Set up auto-sliding
-        function startAutoSlide() {
-          autoSlideInterval = setInterval(nextSlide, 4000); // Change slide every 5 seconds
-        }
-
-        // Stop auto-sliding
-        function stopAutoSlide() {
-          clearInterval(autoSlideInterval);
-        }
-
-        // Event listeners for navigation
-        nextBtn.addEventListener("click", function () {
-          stopAutoSlide();
-          nextSlide();
-          startAutoSlide();
-        });
-
-        prevBtn.addEventListener("click", function () {
-          stopAutoSlide();
-          prevSlide();
-          startAutoSlide();
-        });
-
-        // Event listeners for dots
-        dots.forEach((dot) => {
-          dot.addEventListener("click", function () {
-            stopAutoSlide();
-            currentIndex = parseInt(this.getAttribute("data-index"));
-            updateSlide();
-            startAutoSlide();
-          });
-        });
-
-        // Pause auto-slide when hovering over testimonials
-        const testimonialsContainer = document.querySelector(
-          ".testimonials-container"
-        );
-        testimonialsContainer.addEventListener("mouseenter", stopAutoSlide);
-        testimonialsContainer.addEventListener("mouseleave", startAutoSlide);
-
-        // Start auto-sliding on page load
-        startAutoSlide();
-      });
-    </script>
-    <script>
-      // Mobile Menu Toggle
-      const mobileMenuBtn = document.querySelector(".mobile-menu-btn");
-      const navMenu = document.querySelector(".nav-menu");
-
-      mobileMenuBtn.addEventListener("click", () => {
-        navMenu.classList.toggle("active");
-      });
-
-      // Close mobile menu when clicking on a link
-      document.querySelectorAll(".nav-menu a").forEach((link) => {
-        link.addEventListener("click", () => {
-          navMenu.classList.remove("active");
-        });
-      });
-
-      // Smooth scrolling for navigation links
-      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-        anchor.addEventListener("click", function (e) {
-          e.preventDefault();
-
-          const targetId = this.getAttribute("href");
-          if (targetId === "#") return;
-
-          const targetElement = document.querySelector(targetId);
-          if (targetElement) {
-            window.scrollTo({
-              top: targetElement.offsetTop - 80,
-              behavior: "smooth",
+            // Update active dot
+            dots.forEach((dot, index) => {
+              if (index === currentIndex) {
+                dot.classList.add("active");
+              } else {
+                dot.classList.remove("active");
+              }
             });
           }
-        });
-      });
 
-      // Appointment form submission
-      const appointmentForm = document.querySelector(".appointment-form");
-      if (appointmentForm) {
-        appointmentForm.addEventListener("submit", function (e) {
-          e.preventDefault();
-          alert(
-            "Thank you for booking with us! We will confirm your appointment shortly."
+          // Function to move to next slide
+          function nextSlide() {
+            currentIndex = (currentIndex + 1) % testimonials.length;
+            updateSlide();
+          }
+
+          // Function to move to previous slide
+          function prevSlide() {
+            currentIndex =
+              (currentIndex - 1 + testimonials.length) % testimonials.length;
+            updateSlide();
+          }
+
+          // Set up auto-sliding
+          function startAutoSlide() {
+            autoSlideInterval = setInterval(nextSlide, 4000);
+          }
+
+          // Stop auto-sliding
+          function stopAutoSlide() {
+            clearInterval(autoSlideInterval);
+          }
+
+          // Event listeners for navigation
+          if (nextBtn) {
+            nextBtn.addEventListener("click", function () {
+              stopAutoSlide();
+              nextSlide();
+              startAutoSlide();
+            });
+          }
+
+          if (prevBtn) {
+            prevBtn.addEventListener("click", function () {
+              stopAutoSlide();
+              prevSlide();
+              startAutoSlide();
+            });
+          }
+
+          // Event listeners for dots
+          dots.forEach((dot) => {
+            dot.addEventListener("click", function () {
+              stopAutoSlide();
+              currentIndex = parseInt(this.getAttribute("data-index"));
+              updateSlide();
+              startAutoSlide();
+            });
+          });
+
+          // Pause auto-slide when hovering over testimonials
+          const testimonialsContainer = document.querySelector(
+            ".testimonials-container"
           );
-          this.reset();
-        });
-      }
+          if (testimonialsContainer) {
+            testimonialsContainer.addEventListener("mouseenter", stopAutoSlide);
+            testimonialsContainer.addEventListener(
+              "mouseleave",
+              startAutoSlide
+            );
+          }
+
+          // Start auto-sliding on page load
+          startAutoSlide();
+        }
+
+        // Appointment form submission
+        const appointmentForm = document.querySelector(".appointment-form");
+        if (appointmentForm) {
+          appointmentForm.addEventListener("submit", function (e) {
+            e.preventDefault();
+            alert(
+              "Thank you for booking with us! We will confirm your appointment shortly."
+            );
+            this.reset();
+          });
+        }
+      });
     </script>
   </body>
 </html>

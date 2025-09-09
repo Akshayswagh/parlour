@@ -7,14 +7,19 @@
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    /><!-- Add after your existing font-awesome link -->
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-   <!-- Add after your existing CDN links -->
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> <style>
+    />
+    <!-- Add after your existing font-awesome link -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <!-- Add after your existing CDN links -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
       /* Consolidated CSS */
       :root {
         --primary: #2c2c2c;
@@ -167,42 +172,40 @@
         position: relative;
       }
 
-   /* Hover effect (exclude last link button) */
-.nav-menu li:not(:last-child) a::after {
-  content: "";
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background-color: var(--underline);
-  transition: width 0.3s ease;
-}
+      /* Hover effect (exclude last link button) */
+      .nav-menu li:not(:last-child) a::after {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: var(--underline);
+        transition: width 0.3s ease;
+      }
 
-.nav-menu li:not(:last-child) a:hover::after {
-  width: 100%;
-}
+      .nav-menu li:not(:last-child) a:hover::after {
+        width: 100%;
+      }
 
-.nav-menu li:not(:last-child) a:hover {
-  color: var(--underline);
-}
+      .nav-menu li:not(:last-child) a:hover {
+        color: var(--underline);
+      }
 
-/* Active tab indicator (exclude last link button) */
-.nav-menu li:not(:last-child) a.active {
-  color: var(--underline);
-}
+      /* Active tab indicator (exclude last link button) */
+      .nav-menu li:not(:last-child) a.active {
+        color: var(--underline);
+      }
 
-.nav-menu li:not(:last-child) a.active::after {
-  content: "";
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background-color: var(--underline);
-}
-
-
+      .nav-menu li:not(:last-child) a.active::after {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: var(--underline);
+      }
 
       .mobile-menu-btn {
         display: none;
@@ -282,13 +285,13 @@
         position: relative;
         display: flex;
         flex-direction: column;
-        height: 100%;  /* Set fixed height for consistent cards */
-        min-height: 400px;  /* Minimum height for all cards */
+        height: 100%; /* Set fixed height for consistent cards */
+        min-height: 400px; /* Minimum height for all cards */
       }
 
       .service-card:hover {
         transform: translateY(-15px);
-        box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
       }
 
       .service-image {
@@ -636,6 +639,10 @@
         margin-bottom: 25px;
       }
 
+.contact-info-item  a{
+  color: #333333;
+  text-decoration: none;
+}
       .contact-icon {
         font-size: 24px;
         color: var(--accent);
@@ -728,58 +735,61 @@
       }
 
       /* Add to your existing CSS */
-.animate-on-scroll {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.6s ease-out;
-}
+      .animate-on-scroll {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.6s ease-out;
+      }
 
-.service-card {
-  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-}
+      .service-card {
+        transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+      }
 
-.service-card:hover {
-  transform: translateY(-15px);
-  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-}
+      .service-card:hover {
+        transform: translateY(-15px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      }
 
-/* Enhanced button animations */
-.btn, .card-btn {
-  position: relative;
-  overflow: hidden;
-  transition: all 0.3s ease;
-}
+      /* Enhanced button animations */
+      .btn,
+      .card-btn {
+        position: relative;
+        overflow: hidden;
+        transition: all 0.3s ease;
+      }
 
-.btn:after, .card-btn:after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background: rgba(255,255,255,0.2);
-  transition: width 0.3s ease;
-}
+      .btn:after,
+      .card-btn:after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: rgba(255, 255, 255, 0.2);
+        transition: width 0.3s ease;
+      }
 
-.btn:hover:after, .card-btn:hover:after {
-  width: 100%;
-}
+      .btn:hover:after,
+      .card-btn:hover:after {
+        width: 100%;
+      }
 
-/* Smooth scroll behavior */
-html {
-  scroll-behavior: smooth;
-}
+      /* Smooth scroll behavior */
+      html {
+        scroll-behavior: smooth;
+      }
 
-/* Animation for Instagram posts */
-.instagram-post {
-  transition: transform 0.3s ease;
-}
+      /* Animation for Instagram posts */
+      .instagram-post {
+        transition: transform 0.3s ease;
+      }
 
-.instagram-post:hover {
-  transform: translateY(-10px);
-}
+      .instagram-post:hover {
+        transform: translateY(-10px);
+      }
 
-/* Responsive Styles */
+      /* Responsive Styles */
       @media (max-width: 992px) {
         .about-content,
         .contact-container {
@@ -877,13 +887,21 @@ html {
     </header>
 
     <!-- Hero Section -->
-   <section id="home" class="hero">
-  <div class="container hero-content">
-    <h1 class="animate__animated animate__fadeInDown">Where Style Meets Elegance</h1>
-    <p class="animate__animated animate__fadeInUp animate__delay-1s">Experience premium beauty treatments in a relaxing atmosphere.</p>
-    <a href="#appointment" class="btn animate__animated animate__fadeInUp animate__delay-2s">Book an Appointment</a>
-  </div>
-</section>
+    <section id="home" class="hero">
+      <div class="container hero-content">
+        <h1 class="animate__animated animate__fadeInDown">
+          Where Style Meets Elegance
+        </h1>
+        <p class="animate__animated animate__fadeInUp animate__delay-1s">
+          Experience premium beauty treatments in a relaxing atmosphere.
+        </p>
+        <a
+          href="#appointment"
+          class="btn animate__animated animate__fadeInUp animate__delay-2s"
+          >Book an Appointment</a
+        >
+      </div>
+    </section>
 
     <!-- About Section -->
     <section id="about" class="about" data-aos="fade-up">
@@ -939,7 +957,8 @@ html {
             <div class="service-content">
               <h3>Skin Care</h3>
               <p>
-               Reveal your natural glow with gentle, effective, and nourishing skincare essentials daily.
+                Reveal your natural glow with gentle, effective, and nourishing
+                skincare essentials daily.
               </p>
               <a href="#appointment" class="card-btn">Book Now</a>
             </div>
@@ -955,7 +974,8 @@ html {
             <div class="service-content">
               <h3>Hair Care</h3>
               <p>
-               Transform dull strands into healthy, vibrant, and silky-smooth hair effortlessly.
+                Transform dull strands into healthy, vibrant, and silky-smooth
+                hair effortlessly.
               </p>
               <a href="#appointment" class="card-btn">Book Now</a>
             </div>
@@ -971,7 +991,8 @@ html {
             <div class="service-content">
               <h3>Nail Care</h3>
               <p>
-               Healthy, glossy, and elegant nails begin with gentle and effective care.
+                Healthy, glossy, and elegant nails begin with gentle and
+                effective care.
               </p>
               <a href="#appointment" class="card-btn">Book Now</a>
             </div>
@@ -986,7 +1007,8 @@ html {
             <div class="service-content">
               <h3>Wedding and event Preparation</h3>
               <p>
-               Celebrate love and life with expert wedding and event beauty preparations.
+                Celebrate love and life with expert wedding and event beauty
+                preparations.
               </p>
               <a href="#appointment" class="card-btn">Book Now</a>
             </div>
@@ -1001,7 +1023,8 @@ html {
             <div class="service-content">
               <h3>Waxing</h3>
               <p>
-               Say goodbye to unwanted hair with painless, effective, and skin-friendly waxing.
+                Say goodbye to unwanted hair with painless, effective, and
+                skin-friendly waxing.
               </p>
               <a href="#appointment" class="card-btn">Book Now</a>
             </div>
@@ -1016,7 +1039,8 @@ html {
             <div class="service-content">
               <h3>Manicure</h3>
               <p>
-              Manicure that blends beauty, relaxation, and flawless nail perfection.
+                Manicure that blends beauty, relaxation, and flawless nail
+                perfection.
               </p>
               <a href="#appointment" class="card-btn">Book Now</a>
             </div>
@@ -1031,7 +1055,8 @@ html {
             <div class="service-content">
               <h3>Make-up Services</h3>
               <p>
-              Enhancing your natural beauty with flawless, professional, and long-lasting makeup services.
+                Enhancing your natural beauty with flawless, professional, and
+                long-lasting makeup services.
               </p>
               <a href="#appointment" class="card-btn">Book Now</a>
             </div>
@@ -1046,7 +1071,8 @@ html {
             <div class="service-content">
               <h3>Make-up</h3>
               <p>
-              Enhance your natural beauty with expertly crafted, long-lasting makeup looks.
+                Enhance your natural beauty with expertly crafted, long-lasting
+                makeup looks.
               </p>
               <a href="#appointment" class="card-btn">Book Now</a>
             </div>
@@ -1061,7 +1087,8 @@ html {
             <div class="service-content">
               <h3>Acne treatments</h3>
               <p>
-               Restore confidence with safe, effective, and dermatologist-approved acne care.
+                Restore confidence with safe, effective, and
+                dermatologist-approved acne care.
               </p>
               <a href="#appointment" class="card-btn">Book Now</a>
             </div>
@@ -1076,7 +1103,8 @@ html {
             <div class="service-content">
               <h3>Shampoo & Conditioning</h3>
               <p>
-                Shampoo and conditioner designed to restore natural strength, softness, and brilliance.
+                Shampoo and conditioner designed to restore natural strength,
+                softness, and brilliance.
               </p>
               <a href="#appointment" class="card-btn">Book Now</a>
             </div>
@@ -1091,7 +1119,8 @@ html {
             <div class="service-content">
               <h3>SPA Services</h3>
               <p>
-               Relax, refresh, and rejuvenate with our soothing and luxurious spa services.
+                Relax, refresh, and rejuvenate with our soothing and luxurious
+                spa services.
               </p>
               <a href="#appointment" class="card-btn">Book Now</a>
             </div>
@@ -1107,7 +1136,8 @@ html {
             <div class="service-content">
               <h3>Hair Styling</h3>
               <p>
-                Get the flawless hairstyle you deserve with our professional styling touch.
+                Get the flawless hairstyle you deserve with our professional
+                styling touch.
               </p>
               <a href="#appointment" class="card-btn">Book Now</a>
             </div>
@@ -1418,46 +1448,49 @@ html {
     <section id="appointment" class="appointment" data-aos="fade-up">
       <div class="container">
         <h2 class="section-title">Book an Appointment</h2>
-       <form class="appointment-form" id="appointmentForm">
-  <div class="form-group">
-    <input type="text" id="name" placeholder="Your Name" required />
-  </div>
+        <form class="appointment-form" id="appointmentForm">
+          <div class="form-group">
+            <input type="text" id="name" placeholder="Your Name" required />
+          </div>
 
-
-  <div class="form-group">
-    <input type="email" id="email" placeholder="Your Email" required />
-  </div>
-  <div class="form-group">
-    <input type="tel" id="phone" placeholder="Your Phone" required />
-  </div>
-  <div class="form-group">
-    <select id="service" required>
+          <div class="form-group">
+            <input type="email" id="email" placeholder="Your Email" required />
+          </div>
+          <div class="form-group">
+            <input type="tel" id="phone" placeholder="Your Phone" required />
+          </div>
+          <div class="form-group">
+            <select id="service" required>
               <option value="" disabled selected>Select Service</option>
               <option value="skin-care">Skin Care</option>
               <option value="hair-care">Hair Care</option>
               <option value="nails">Nail Care</option>
-              <option value="Wedding and event Preparation">Wedding and event Preparation</option>
+              <option value="Wedding and event Preparation">
+                Wedding and event Preparation
+              </option>
               <option value="Waxing">Waxing</option>
               <option value="Manicure">Manicure</option>
               <option value="Make-up Services">Make-up Services</option>
               <option value="Make-up">Make-up</option>
               <option value="Acne treatments">Acne treatments</option>
-              <option value="Shampu & Conditioning">Shampu & Conditioning</option>
+              <option value="Shampu & Conditioning">
+                Shampu & Conditioning
+              </option>
               <option value="SPA Services">SPA Services</option>
               <option value="Hair Styling">Hair Styling</option>
-           </select>
-  </div>
-  <div class="form-group">
-    <input type="date" id="date" required />
-  </div>
-  <div class="form-group">
-    <input type="time" id="time" required />
-  </div>
-  <div class="form-group">
-    <textarea id="message" placeholder="Special Requests"></textarea>
-  </div>
-  <button type="submit" class="btn">Book Now</button>
-</form>
+            </select>
+          </div>
+          <div class="form-group">
+            <input type="date" id="date" required />
+          </div>
+          <div class="form-group">
+            <input type="time" id="time" required />
+          </div>
+          <div class="form-group">
+            <textarea id="message" placeholder="Special Requests"></textarea>
+          </div>
+          <button type="submit" class="btn">Book Now</button>
+        </form>
       </div>
     </section>
 
@@ -1474,7 +1507,7 @@ html {
               <div class="contact-details">
                 <h4>Location</h4>
                 <p>
-                  123 Beauty Street, Elegant District<br />City, State 12345
+                  Hanuman Road, Near Vasudev Hospital, <br />Panchgani-412805
                 </p>
               </div>
             </div>
@@ -1485,7 +1518,9 @@ html {
               </div>
               <div class="contact-details">
                 <h4>Phone</h4>
-                <p>+1 (123) 456-7890</p>
+                <p><a href="tel:+917385419767">+91 738 541 9767</a></p>
+
+                <p><a href="tel:+917972368261">+91 797 236 8261</a> </p>
               </div>
             </div>
 
@@ -1495,7 +1530,7 @@ html {
               </div>
               <div class="contact-details">
                 <h4>Email</h4>
-                <p>info@stylettebeauty.com</p>
+                 <a href="mailto:stylettebeautysalon@gmail.com">stylettebeautysalon@gmail.com</a>
               </div>
             </div>
 
@@ -1505,10 +1540,7 @@ html {
               </div>
               <div class="contact-details">
                 <h4>Working Hours</h4>
-                <p>
-                  Monday - Friday: 9am - 8pm<br />Saturday: 10am - 6pm<br />Sunday:
-                  11am - 4pm
-                </p>
+                <p>Monday - Sunday : <br> 10:00 AM - 07:00 PM</p>
               </div>
             </div>
           </div>
@@ -1556,11 +1588,15 @@ html {
           <div class="footer-col">
             <h3>Contact Info</h3>
             <p>
-              <i class="fas fa-map-marker-alt"></i> 123 Beauty Street, City,
-              State
+              <i class="fas fa-map-marker-alt"></i> Hanuman Road, Near Vasudev
+              Hospital, Panchgani-412805
             </p>
-            <p><i class="fas fa-phone"></i> +1 (123) 456-7890</p>
-            <p><i class="fas fa-envelope"></i> info@stylettebeauty.com</p>
+            <p><i class="fas fa-phone"></i> <a href="tel:+917385419767">+91 738 541 9767</a></p>
+            <p>
+              <i class="fas fa-phone"> </i> <a href="tel:+917972368261">+91 797 236 8261</a> 
+            </p>
+            <p><i class="fas fa-envelope"></i> <a href="mailto:stylettebeautysalon@gmail.com">    stylettebeautysalon@gmail.com</a>
+</p>
           </div>
         </div>
 
@@ -1736,57 +1772,58 @@ html {
         if (appointmentForm) {
           appointmentForm.addEventListener("submit", function (e) {
             e.preventDefault();
-            
+
             // Show loading state
             Swal.fire({
-              title: 'Booking Appointment...',
-              html: 'Please wait while we process your request',
+              title: "Booking Appointment...",
+              html: "Please wait while we process your request",
               allowOutsideClick: false,
               didOpen: () => {
                 Swal.showLoading();
-              }
+              },
             });
 
             // Collect form data
             const formData = {
-              name: document.getElementById('name').value,
-              email: document.getElementById('email').value,
-              phone: document.getElementById('phone').value,
-              service: document.getElementById('service').value,
-              date: document.getElementById('date').value,
-              time: document.getElementById('time').value,
-              message: document.getElementById('message').value
+              name: document.getElementById("name").value,
+              email: document.getElementById("email").value,
+              phone: document.getElementById("phone").value,
+              service: document.getElementById("service").value,
+              date: document.getElementById("date").value,
+              time: document.getElementById("time").value,
+              message: document.getElementById("message").value,
             };
 
             // Replace with your Google Apps Script URL
-            const scriptURL = 'https://script.google.com/macros/s/AKfycbymOse1ZoMxzZ1UeF6U-yuAjjdojzApIr9Y2XVaErWrg2kbmXEOynlVMBrTpEaoMF2wow/exec';
+            const scriptURL =
+              "https://script.google.com/macros/s/AKfycbymOse1ZoMxzZ1UeF6U-yuAjjdojzApIr9Y2XVaErWrg2kbmXEOynlVMBrTpEaoMF2wow/exec";
 
             fetch(scriptURL, {
-              method: 'POST',
-              mode: 'no-cors',
+              method: "POST",
+              mode: "no-cors",
               headers: {
-                'Content-Type': 'application/x-www-form-urlencoded',
+                "Content-Type": "application/x-www-form-urlencoded",
               },
-              body: new URLSearchParams(formData)
+              body: new URLSearchParams(formData),
             })
-            .then(response => {
-              Swal.fire({
-                icon: 'success',
-                title: 'Booking Successful!',
-                text: 'We will confirm your appointment shortly.',
-                confirmButtonColor: '#6a0572'
+              .then((response) => {
+                Swal.fire({
+                  icon: "success",
+                  title: "Booking Successful!",
+                  text: "We will confirm your appointment shortly.",
+                  confirmButtonColor: "#6a0572",
+                });
+                this.reset();
+              })
+              .catch((error) => {
+                console.error("Error:", error);
+                Swal.fire({
+                  icon: "error",
+                  title: "Oops...",
+                  text: "Something went wrong! Please try again.",
+                  confirmButtonColor: "#6a0572",
+                });
               });
-              this.reset();
-            })
-            .catch(error => {
-              console.error('Error:', error);
-              Swal.fire({
-                icon: 'error',
-                title: 'Oops...',
-                text: 'Something went wrong! Please try again.',
-                confirmButtonColor: '#6a0572'
-              });
-            });
           });
         }
 
@@ -1794,14 +1831,14 @@ html {
         AOS.init({
           duration: 1000,
           once: true,
-          offset: 100
+          offset: 100,
         });
 
         // GSAP Animations
         gsap.registerPlugin(ScrollTrigger);
 
         // Animate section titles
-        gsap.utils.toArray('.section-title').forEach(title => {
+        gsap.utils.toArray(".section-title").forEach((title) => {
           gsap.from(title, {
             scrollTrigger: {
               trigger: title,
@@ -1809,12 +1846,12 @@ html {
             },
             y: 50,
             opacity: 0,
-            duration: 1
+            duration: 1,
           });
         });
 
         // Service cards animation
-        document.querySelectorAll('.service-card').forEach((card, index) => {
+        document.querySelectorAll(".service-card").forEach((card, index) => {
           gsap.from(card, {
             scrollTrigger: {
               trigger: card,
@@ -1823,7 +1860,7 @@ html {
             y: 100,
             opacity: 0,
             duration: 0.8,
-            delay: index * 0.1
+            delay: index * 0.1,
           });
         });
       });
